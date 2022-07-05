@@ -1,0 +1,27 @@
+print("Let's play Rock, Paper and Scissors.")
+for _ in range(3):
+  import random
+  player = input("Pick Rock, Paper, or Scissors (only put first letter): ")
+  comp = ['r', 'p', 's']
+  comp_choice = (random.choice(comp))
+  if player == 'r' and comp_choice == 'p':
+    print("Paper, you lose >:)")
+  elif player == 'r' and comp_choice == 's':
+    print("Scissors, you win :'(")
+  elif player == 'r' and comp_choice == 'r':
+    print ("Rock, tie")
+  elif player == 'p' and comp_choice == 'p':
+    print("Paper, tie")
+  elif player == 'p' and comp_choice == 's':
+    print("Scissors, you lose >:)")
+  elif player == 'p' and comp_choice == 'r':
+    print ("Rock, you win :'(")
+  elif player == 's' and comp_choice == 'p':
+    print("Paper, you win :'(")
+  elif player == 's' and comp_choice == 's':
+    print("Scissors, tie")
+  elif player == 's' and comp_choice == 'r':
+    print("Rock, you lose >:)")
+
+  if player != 'r' and player != 'p' and player != 's':
+    print("You've managed to get something wrong. Try again.")
