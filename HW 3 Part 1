@@ -1,0 +1,30 @@
+#Variables and lists:
+count=0
+go="y"
+y_n="y"
+candy_cart = []
+candy_list = ["Snickers", "Kit Kat", "Sour Patch Kids", "Juicy Fruit", "Swedish Fish", "Skittles", "Hershey Bar", "Starbursts", "M&Ms"]
+limit=5
+
+#Choosing:
+while count<limit and go=="y":
+  for i in range(len(candy_list)):
+      print("[" + str(i) + "] " + candy_list[i])
+      go="n"
+  answer=input("Your number: ")
+  #Confirmation
+  print("Are you sure you want "+candy_list[int(answer)]+"?")
+  confirm=input( )
+  if confirm=="y":
+    candy_cart.append(candy_list[int(answer)])
+    count+=1
+    #Want more?
+    go=input("Do you want more candies?")
+    if go=="n":
+      count=5
+  elif confirm=="n":
+    go="y"
+
+#Result:
+if count==limit:
+  print("Your candies: "+str(candy_cart))
