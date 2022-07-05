@@ -1,0 +1,24 @@
+pie_list=["Pecan", "Apple", "Bean", "Banoffee", "Black bun", "Blueberry", "Buko", "Burek", "Tamale", "Steak"]
+shopping="y"
+pie_purchases=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+print("Hello, welcome to David's pies. ")
+price=0
+while shopping=="y":
+  for i in range(len(pie_list)):
+    print("[" + str(i) + "] " + pie_list[i])
+  want=input("Which pie would you like? Please enter its number.")
+  shopping="n"
+  confirm=input("Are you sure you want "+pie_list[int(want)]+"?")
+  if confirm=="y":
+    pie_purchases[int(want)]=pie_purchases[int(want)]+1
+    more=input("Would you like any other pies?")
+    price=price+5
+    if more=="y":
+      shopping="y"
+    elif more=="n":
+      print("Here are your pies:")
+      for i in range(len(pie_list)):
+        print(str(pie_purchases[i])+" "+pie_list[i])
+      print("That will cost $"+str(price)+".")
+  elif confirm=="n":
+    shopping="y"
