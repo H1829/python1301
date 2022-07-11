@@ -1,0 +1,28 @@
+import csv
+with open('netflix_list.py', 'r') as read_obj:
+    csv_reader = csv.reader(read_obj)
+    netflix_list = list(csv_reader)
+    
+searching=0
+found=False
+ask=input("Which movie would you like to search for? ")
+if found==False:
+    searching=0
+while found==False:
+    searching=searching+1
+    if netflix_list[searching][0]==ask:
+        found=True
+        print("Hooray, we found your movie. The movie " +ask+" is rated "+netflix_list[searching][1]+", has a rating level of "+str(netflix_list[searching][5])+".")
+        again=input("Would you like to find another movie? Y or N.")
+        if again=="y" or "Y":
+            found=False
+            searching=0
+            ask=input("Which movie would you like to search for? ")
+    elif searching==999:
+        found=True
+        print("Oh no! The "+ask+" is not on the list!")
+        again=input("Would you like to find another movie? Y or N.")
+        if again=="y" or "Y":
+            found=False
+            searching=0
+            ask=input("Which movie would you like to search for? ")
